@@ -12,6 +12,11 @@ import java.lang.reflect.Proxy;
 import java.time.LocalDate;
 import java.util.Map;
 
+/**
+ * 将@Component注释掉时，调用JokoliaService的URL时，程序异常，因为jolokia的类型转换器没有String To LocalDate
+ * 的转换器
+ * 这个类的作用是使用代理创建LocalDateParser 并将其其注册到StringToObjectConverter类的PARSER_MAP中
+ */
 @Component
 public class JokoliaStarter implements ApplicationRunner {
     @Override

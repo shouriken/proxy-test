@@ -11,7 +11,8 @@ import java.time.LocalDate;
 @ManagedResource(objectName = "bean:name=JokoliaService", description = "jokolia type parser test")
 public class JokoliaService {
 
-    //curl localhost:9096/man/jolokia/exec/bean:name=JokoliaService/test/{date}
+    // 可以用postman 调用下面的URL
+    //localhost:9096/man/jolokia/exec/bean:name=JokoliaService/test/{date}
     @ManagedOperation
     @ManagedOperationParameter(name = "date", description = "date")
     public void test(LocalDate date){
